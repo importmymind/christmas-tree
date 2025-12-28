@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Gift Tree</title>
+
+    <meta property="og:title" content="Sürpriz Yılbaşı Ağacı! 🎄✨">
+    <meta property="og:description" content="Senin için hazırladığım özel hediyeleri görmek için tıkla! 🎁">
+    <meta name="theme-color" content="#0f172a">
+
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="snow-container" id="snowContainer"></div>
+
+    <div class="tree-container" id="treeContainer">
+        <div class="box box-1 beige ribbon-cross" onclick="openGift(1)"><span class="bow" style="top: -12px;">★</span></div>
+        <div class="box box-2 pattern-zigzag ribbon-v" onclick="openGift(2)"><span class="icon" style="color:white; font-size:16px;">*</span></div>
+        <div class="box box-3 pattern-stripes ribbon-h" onclick="openGift(3)"></div>
+        <div class="box box-4 green ribbon-cross" onclick="openGift(4)"></div>
+        <div class="box box-5 green ribbon-cross" onclick="openGift(5)"></div>
+        <div class="box box-6 pattern-tri ribbon-v" onclick="openGift(6)"></div>
+        <div class="box box-7 pattern-dots-red ribbon-h" onclick="openGift(7)"></div>
+        <div class="box box-8 pattern-grid ribbon-h" onclick="openGift(8)"></div> 
+        <div class="box box-9 pattern-lines ribbon-v" onclick="openGift(9)"><span class="icon" style="color:#333;">✻</span></div>
+        <div class="box box-10 red ribbon-cross" onclick="openGift(10)"><span class="icon" style="color:white; font-size:14px;">❄</span></div>
+        <div class="box box-11 pattern-green-stripes ribbon-h" onclick="openGift(11)"><span class="icon" style="color:#fff;">✿</span></div>
+
+        <div class="box box-14 beige ribbon-cross" onclick="openGift(14)"></div>
+        <div class="box box-13 pattern-tri ribbon-v" onclick="openGift(13)"></div>
+
+        <div class="footer-text">HAPPY NEW YEAR !</div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <div class="modal-close" onclick="closeModal()">✕</div>
+            <span class="modal-content-icon" id="mIcon"></span>
+            <h2 id="mTitle"></h2>
+            <p id="mDesc"></p>
+            <div id="mAction"></div>
+        </div>
+    </div>
+
+    <button onclick="downloadScreenshot()" id="downloadBtn" style="position: fixed; bottom: 20px; left: 20px; background: #d4af37; color: #000; border: none; padding: 10px 20px; border-radius: 30px; font-weight: bold; cursor: pointer; z-index: 100; box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); display: none;">
+    📸 Save
+    </button>
+
+    <button onclick="downloadMyGifts()" id="downloadBtn" style="position: fixed; bottom: 20px; left: 20px; background: #d4af37; color: #000; border: none; padding: 10px 20px; border-radius: 30px; font-weight: bold; cursor: pointer; z-index: 100; box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); display: none;">
+        📥 Save My Gifts
+    </button>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    
+    <audio id="bgMusic" loop>
+        <source src="assets/music/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music-control" onclick="toggleMusic()">
+        <span id="musicIcon">🔇</span>
+    </div>
+</body>
+</html>
