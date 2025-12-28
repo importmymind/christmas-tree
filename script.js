@@ -2069,7 +2069,7 @@ function downloadScreenshot() {
     }).then(canvas => {
         // İndirme işlemini başlat
         const link = document.createElement('a');
-        link.download = 'Yilbasi-Agacim-2026.png';
+        link.download = 'My-Christmas-Tree-2026.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
 

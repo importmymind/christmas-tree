@@ -1202,3 +1202,36 @@ textarea {
         font-size: 20px;
     }
 }
+
+/* --- KESİN ÇÖZÜM: ÇİZGİLERİ VE DESENLERİ SİL --- */
+
+.box-opened {
+    /* 1. Arka plandaki tüm çizgili desenleri (gradient) İPTAL ET */
+    background-image: none !important;
+    
+    /* 2. Arka planı düz koyu yeşil yap (Böylece desenler silinir) */
+    background-color: #064e3b !important; 
+    
+    /* 3. Kenar çizgisi ekle (Altın sarısı şık durur) */
+    border: 2px solid #ffd700 !important;
+    
+    /* 4. Hafif parlama efekti */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3) !important;
+}
+
+/* Kutu içindeki/üstündeki fiyonk, yıldız vb. süsleri gizle */
+.box-opened::before,
+.box-opened::after,
+.box-opened .bow,
+.box-opened .icon,
+.box-opened span { 
+    /* span ekledik çünkü bazı ikonlar span içinde */
+    display: none !important;
+    content: none !important;
+}
+
+/* ÖNEMLİ: Açılan kutunun içindeki RESİM (img) gizlenmemeli! */
+.box-opened img {
+    display: block !important;
+    z-index: 10 !important; /* Resmi en öne getir */
+}
